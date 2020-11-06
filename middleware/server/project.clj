@@ -34,6 +34,11 @@
                            :resource-paths ["env/dev/resources"]
                            :repl-options {:init-ns user
                                           :timeout 120000}
-                           ;:middleware [ultra.plugin/middleware]
+                           :middleware [leiningen.jlink/middleware]
                            :plugins [;[venantius/ultra "0.6.0"]
-                                     [com.jakemccrary/lein-test-refresh "0.24.1"]]}})
+                                     [lein-jlink "0.3.0"]
+                                     [com.jakemccrary/lein-test-refresh "0.24.1"]]
+                           :jlink-modules ["java.sql"
+                                           "java.xml"
+                                           "java.naming"
+                                           "java.desktop"]}})
